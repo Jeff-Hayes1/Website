@@ -62,7 +62,7 @@
     <!-- Hero Section -->
     <section class="pt-16 min-h-screen flex items-center justify-center bg-gradient-to-br from-dark-bg to-dark-card">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-5xl md:text-7xl font-bold text-white mb-6">HayesPoint Strategies</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">HayesPoint Strategies</h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-4">With over 30 years of C-suite level experience — including 17 as CEO — HayesPoint Strategies helps C-suite leaders achieve more than they ever thought possible.
 </p>
             <p class="text-lg md:text-xl text-gray-400 mb-8">CEO Coach • Strategy Consultant • Management Expert</p>
@@ -74,7 +74,7 @@
     </section>
 
     <!-- Bio Section -->
-    <section id="bio" class="py-20 bg-dark-card">
+    <section id="bio" class="scroll-mt-24 py-20 bg-dark-card">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-white mb-4">About HayesPoint Strategies</h2>
@@ -121,7 +121,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-dark-bg">
+    <section id="services" class="scroll-mt-24 py-20 bg-dark-bg">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-white mb-4">Services</h2>
@@ -188,7 +188,7 @@
     </section>
 
     <!-- Consulting Section -->
-    <section id="consulting" class="py-20 bg-dark-card">
+    <section id="consulting" class="scroll-mt-24 py-20 bg-dark-card">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-white mb-4">Consulting Approach</h2>
@@ -305,7 +305,7 @@
                         </div>
                         <div>
                             
-                            <p class="text-gray-300">jeff-hayes1@outlook.com</p>
+                            <p><a href="mailto:jeff-hayes1@outlook.com" class="text-gray-300 hover:text-white">jeff-hayes1@outlook.com</a></p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
@@ -316,7 +316,7 @@
                         </div>
                         <div>
                             
-                            <p class="text-gray-300">+1 (408) 499-4923</p>
+                            <p><a href="tel:+14084994923" class="text-gray-300 hover:text-white">+1 (408) 499-4923</a></p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
@@ -376,7 +376,7 @@
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
                     <div class="space-y-2 text-gray-400">
-                        <p>email</p>
+                        <p><a href="mailto:jeff-hayes1@outlook.com" class="text-gray-400 hover:text-white">jeff-hayes1@outlook.com</a></p>
                         <div class="flex space-x-4 mt-4">
                             <a href="#" class="text-gray-400 hover:text-white transition-colors">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -399,12 +399,17 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle with ARIA support
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
+        function setExpanded(expanded) {
+          mobileMenuButton.setAttribute('aria-expanded', String(expanded));
+        }
+
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+          const isHidden = mobileMenu.classList.toggle('hidden');
+          setExpanded(!isHidden);
         });
 
         // Smooth scrolling for anchor links
